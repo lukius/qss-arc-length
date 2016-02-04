@@ -15,8 +15,12 @@ class PolyArcLength(object):
     @classmethod
     def for_polys(cls, x_t, y_t):
         # TODO: only valid for polynomials of degree < 3.
-        if (len(x_t) < 3 and len(y_t) < 3) or (x_t[2] == 0 and y_t[2] == 0):
+        if len(x_t) < 3 and len(y_t) < 3:
             subclass = Poly1ArcLength
+        elif x_t[2] == 0 and y_t[2] == 0:
+            subclass = Poly1ArcLength
+            x_t = x_t[:2]
+            y_t = y_t[:2]
         else:
             subclass = Poly2ArcLength
         return subclass(x_t, y_t)
