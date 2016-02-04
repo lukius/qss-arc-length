@@ -5,8 +5,8 @@ class PolyArcLength(object):
     
     # Arc length calculation for two-dimensional parametric curves of the
     # form
-    # x(t) = a_0 + a_1 * t + ... + a_k * x^k
-    # y(t) = b_0 + b_1 * t + ... + b_k * x^k
+    # x(t) = a_0 + a_1 * t + ... + a_k * t^k
+    # y(t) = b_0 + b_1 * t + ... + b_k * t^k
     
     # As apparently there is no closed form solution for the indefinite  
     # integral that arises when k > 2, we currently support polynomials
