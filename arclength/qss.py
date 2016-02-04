@@ -53,7 +53,7 @@ class QSS3ArcLength(object):
                 # Adjust start time for the first section.
                 t0x = t0y = max(t0x, t0y)
                 
-            # As an invariant, start time should always match.
+            # As an invariant, start times should always match.
             assert(t0x == t0y)
     
             if t1x == t1y:
