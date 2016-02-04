@@ -55,19 +55,6 @@ class Poly2ArcLength(PolyArcLength):
         self.a0, self.a1, self.a2 = x_t
         self.b0, self.b1, self.b2 = y_t
 
-    def value(self, t0, t1):
-        # Returns the arc length of the parametric curve
-        # x(t) = q_x[0] + q_x[1] * t + q_x[2] * t^2
-        # y(t) = q_y[0] + q_y[1] * t + q_y[2] * t^2 
-        # between t0 and t1.
-        if t1 < t0:
-            t0, t1 = t1, t0
-
-        if self.a2 == 0 and self.b2 == 0:
-            return sqrt(self.a1*self.a1 + self.b1*self.b1) * (t1 - t0)
-            
-        return self._eval_integral(t1) - self._eval_integral(t0)
-
     def _eval_integral(self, t):
         tsq, a1sq, a2sq, b2sq = t*t, self.a1*self.a1, self.a2*self.a2, self.b2*self.b2
         
