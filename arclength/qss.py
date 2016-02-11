@@ -43,9 +43,10 @@ class QSS3ArcLength(object):
         i = 0
         j = 0
         running_total = 0
-        n = len(self.v_x)
+        n_x = len(self.v_x)
+        n_y = len(self.v_y)
         
-        while i < n and j < n:
+        while i < n_x and j < n_y:
             q_x, t0x, t1x = self.v_x[i]
             q_y, t0y, t1y = self.v_y[j]
             
